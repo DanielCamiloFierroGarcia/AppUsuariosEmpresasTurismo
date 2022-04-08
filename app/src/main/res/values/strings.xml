@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">AplicacionUsuarios</string>
+    <string name="app_name">BiciApp</string>
+    <string name="correo">Correo</string>
+    <string name="clave">Contraseña</string>
+    <string name="login">LogIn</string>
+    <string name="registrar">Registrar</string>
+    <string name="nombre">Nombre</string>
+    <string name="edad">Edad</string>
+    <string name="Genero">Genero</string>
+    <string name="TerminarRegistro">Registrarse</string>
+    <string name="Bienvenido">Bienvenido a tu perfil</string>
+    <string name="Salir">Cerrar sesion</string>
+    <string name="Editar">Editar perfil</string>
+    <string name="Veces">Veces que se ha hecho login:</string>
 </resources>

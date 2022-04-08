@@ -1,4 +1,4 @@
-package com.example.aplicacionusuarios;
+package com.example.aplicacionusuariosempresa;
 
 import org.junit.Test;
 
