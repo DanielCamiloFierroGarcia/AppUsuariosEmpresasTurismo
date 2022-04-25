@@ -70,6 +70,10 @@ public class registrarNuevaUbicacion extends AppCompatActivity implements View.O
                 text_longitud.setText(longitud.getText().toString());
                 text_latitud.setText(latitud.getText().toString());
 
+                nombre.setText("");
+                latitud.setText("");
+                longitud.setText("");
+
             }else{
                 Toast.makeText(registrarNuevaUbicacion.this, "Error en las coordenadas", Toast.LENGTH_SHORT).show();
 
