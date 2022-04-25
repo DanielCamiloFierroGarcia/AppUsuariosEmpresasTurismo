@@ -1,4 +1,4 @@
-package com.example.aplicacionusuariosempresa;
+package com.example.aplicacionusuariosempresa.Modelo;
 
 public class Usuario {
 
