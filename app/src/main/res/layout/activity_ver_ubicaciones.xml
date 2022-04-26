@@ -7,20 +7,29 @@
     android:orientation="vertical"
     tools:context=".verUbicaciones">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
-        <Button
-            android:id="@+id/volverUbicaciones"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/volver" />
-        <Button
-            android:id="@+id/irAMapa"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/verEnMapa" />
+                <Button
+                    android:id="@+id/volverUbicaciones"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/volver" />
+                <Button
+                    android:id="@+id/irAMapa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/verEnMapa" />
+
+        </LinearLayout>
 </LinearLayout>

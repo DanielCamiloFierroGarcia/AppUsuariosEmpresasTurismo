@@ -7,13 +7,14 @@ import android.os.Bundle;
 
 import com.example.aplicacionusuariosempresa.Adaptadores.AdaptadorUbicacion;
 import com.example.aplicacionusuariosempresa.Modelo.Ubicacion;
+import com.example.aplicacionusuariosempresa.databinding.ActivityVerUbicacionesBinding;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.example.aplicacionusuariosempresa.databinding.ActivityVerUbicacionMapaBinding;
+import com.example.aplicacionusuariosempresa.databinding.VerUbicacionMapaBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,7 +27,7 @@ import java.util.ArrayList;
 public class verUbicacionMapa extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private ActivityVerUbicacionMapaBinding binding;
+    private ActivityVerUbicacionesBinding binding;//ActivityVerUbicacionMapaBinding
     FirebaseDatabase database;
     DatabaseReference myRef;
 
@@ -42,7 +43,7 @@ public class verUbicacionMapa extends FragmentActivity implements OnMapReadyCall
 
         auth = FirebaseAuth.getInstance();
 
-        binding = ActivityVerUbicacionMapaBinding.inflate(getLayoutInflater());
+        binding = ActivityVerUbicacionesBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
