@@ -3,18 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/santi/OneDrive/Universidad/Septimo semestre/computacionMovil/AppUsuariosEmpresasTurismo/app/src/main/res/layout/activity_main.xml" value="0.1503623188405797" />
-        <entry key="..\:/Users/santi/OneDrive/Universidad/Septimo semestre/computacionMovil/AppUsuariosEmpresasTurismo/app/src/main/res/layout/activity_mapa_ubicaciones.xml" value="0.1" />
-        <entry key="..\:/Users/santi/OneDrive/Universidad/Septimo semestre/computacionMovil/AppUsuariosEmpresasTurismo/app/src/main/res/layout/activity_perfil_usuario.xml" value="0.25" />
-        <entry key="..\:/Users/santi/OneDrive/Universidad/Septimo semestre/computacionMovil/AppUsuariosEmpresasTurismo/app/src/main/res/layout/activity_registrar.xml" value="0.1" />
-        <entry key="..\:/Users/santi/OneDrive/Universidad/Septimo semestre/computacionMovil/AppUsuariosEmpresasTurismo/app/src/main/res/layout/activity_registrar_nueva_ubicacion.xml" value="0.25" />
-        <entry key="..\:/Users/santi/OneDrive/Universidad/Septimo semestre/computacionMovil/AppUsuariosEmpresasTurismo/app/src/main/res/layout/activity_registrar_ubicacion.xml" value="0.1" />
-        <entry key="..\:/Users/santi/OneDrive/Universidad/Septimo semestre/computacionMovil/AppUsuariosEmpresasTurismo/app/src/main/res/layout/activity_regitrar_ubicacion.xml" value="0.1503623188405797" />
-        <entry key="..\:/Users/santi/OneDrive/Universidad/Septimo semestre/computacionMovil/AppUsuariosEmpresasTurismo/app/src/main/res/layout/activity_ver_ubicaciones.xml" value="0.2" />
-        <entry key="..\:/Users/santi/OneDrive/Universidad/Septimo semestre/computacionMovil/AppUsuariosEmpresasTurismo/app/src/main/res/layout/ubicacion_view.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.67913818359375" />
-        <entry key="app/src/main/res/layout/activity_perfil_usuario.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_registrar.xml" value="0.3553115844726563" />
+        <entry key="..\:/Repos/MovilE/AppUsuariosEmpresasTurismo/app/src/main/res/layout/activity_editar_perfil.xml" value="0.20521590423257802" />
+        <entry key="..\:/Repos/MovilE/AppUsuariosEmpresasTurismo/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Repos/MovilE/AppUsuariosEmpresasTurismo/app/src/main/res/layout/activity_perfil_usuario.xml" value="0.25" />
+        <entry key="..\:/Repos/MovilE/AppUsuariosEmpresasTurismo/app/src/main/res/layout/activity_registrar.xml" value="0.264" />
+        <entry key="..\:/Repos/MovilE/AppUsuariosEmpresasTurismo/app/src/main/res/layout/activity_registrar_nueva_ubicacion.xml" value="0.25" />
+        <entry key="..\:/Repos/MovilE/AppUsuariosEmpresasTurismo/app/src/main/res/layout/activity_ver_ubicacion_mapa.xml" value="0.25" />
+        <entry key="..\:/Repos/MovilE/AppUsuariosEmpresasTurismo/app/src/main/res/layout/activity_ver_ubicaciones.xml" value="0.25" />
+        <entry key="..\:/Repos/MovilE/AppUsuariosEmpresasTurismo/app/src/main/res/layout/ubicacion_view.xml" value="0.25" />
+        <entry key="..\:/Repos/MovilE/AppUsuariosEmpresasTurismo/app/src/main/res/layout/ver_ubicacion_mapa.xml" value="0.20521590423257802" />
       </map>
     </option>
   </component>
