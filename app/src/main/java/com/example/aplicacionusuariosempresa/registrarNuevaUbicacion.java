@@ -89,7 +89,7 @@ public class registrarNuevaUbicacion extends AppCompatActivity implements View.O
         Button buttonVer = findViewById(R.id.ver_ubicaciones);
 
         buttonVer.setOnClickListener(view -> {
-            startActivity(new Intent(registrarNuevaUbicacion.this, verUbicaciones.class));
+            startActivity(new Intent(registrarNuevaUbicacion.this, VerUbicaciones.class));
         });
         Button buttonVolver= findViewById(R.id.volverAPerfil);
 

@@ -9,7 +9,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.example.aplicacionusuariosempresa.Adaptadores.AdaptadorUbicacion;
 import com.example.aplicacionusuariosempresa.Modelo.Ubicacion;
@@ -21,9 +20,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class verUbicaciones extends AppCompatActivity implements View.OnClickListener{
+public class VerUbicaciones extends AppCompatActivity implements View.OnClickListener{
 
     FirebaseDatabase database;
     DatabaseReference myRef;
@@ -50,11 +48,11 @@ public class verUbicaciones extends AppCompatActivity implements View.OnClickLis
 
         Button buttonVolver = findViewById(R.id.volverUbicaciones);
         buttonVolver.setOnClickListener(view -> {
-            startActivity(new Intent(verUbicaciones.this, registrarNuevaUbicacion.class));
+            startActivity(new Intent(VerUbicaciones.this, registrarNuevaUbicacion.class));
         });
         Button buttonIrAMapa = findViewById(R.id.irAMapa);
         buttonIrAMapa.setOnClickListener(view -> {
-            startActivity(new Intent(verUbicaciones.this, verUbicacionMapa.class));
+            startActivity(new Intent(VerUbicaciones.this, VerUbicacionEnMapa.class));
         });
     }
 

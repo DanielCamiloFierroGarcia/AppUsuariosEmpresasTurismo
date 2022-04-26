@@ -30,7 +30,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
-public class verPerfil extends AppCompatActivity {
+public class VerPerfil extends AppCompatActivity {
 
     private Button salirSesion, editarPerfil, registrar_ubicacion, irPerfil, guardarCambios;
     private TextView mostrarNombre, mostrarCorreo, mostrarGenero, mostrarEdad, mostrarVeces;
@@ -51,7 +51,7 @@ public class verPerfil extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(verPerfil.this, MainActivity.class));
+                startActivity(new Intent(VerPerfil.this, MainActivity.class));
             }
         });
 
@@ -94,7 +94,7 @@ public class verPerfil extends AppCompatActivity {
                             Usuario user = new Usuario(nombre2, correo, direccion2, false, perfilUsuario.veces);
                             FirebaseDatabase.getInstance().getReference("Usuarios")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user);
-                            startActivity(new Intent(verPerfil.this, PerfilUsuario.class));
+                            startActivity(new Intent(VerPerfil.this, PerfilUsuario.class));
                         }
                     });
 
@@ -103,7 +103,7 @@ public class verPerfil extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(verPerfil.this, "Un error ocurrio", Toast.LENGTH_LONG).show();
+                Toast.makeText(VerPerfil.this, "Un error ocurrio", Toast.LENGTH_LONG).show();
             }
         });
         //para la imagen de perfil
@@ -148,7 +148,7 @@ public class verPerfil extends AppCompatActivity {
         referenciaArchivo.putFile(imagenUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Toast.makeText(verPerfil.this, "Imagen subida", Toast.LENGTH_LONG).show();
+                Toast.makeText(VerPerfil.this, "Imagen subida", Toast.LENGTH_LONG).show();
                 referenciaArchivo.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
@@ -159,7 +159,7 @@ public class verPerfil extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(verPerfil.this, "Error al subir", Toast.LENGTH_LONG).show();
+                Toast.makeText(VerPerfil.this, "Error al subir", Toast.LENGTH_LONG).show();
             }
         });
 
