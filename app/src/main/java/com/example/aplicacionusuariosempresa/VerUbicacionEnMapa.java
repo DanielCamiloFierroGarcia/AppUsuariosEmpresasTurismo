@@ -1,20 +1,18 @@
 package com.example.aplicacionusuariosempresa;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 
-import com.example.aplicacionusuariosempresa.Adaptadores.AdaptadorUbicacion;
 import com.example.aplicacionusuariosempresa.Modelo.Ubicacion;
-import com.example.aplicacionusuariosempresa.databinding.ActivityVerUbicacionesBinding;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.example.aplicacionusuariosempresa.databinding.VerUbicacionMapaBinding;
+import com.example.aplicacionusuariosempresa.databinding.ActivityVerUbicacionEnMapaBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,10 +22,10 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class verUbicacionMapa extends FragmentActivity implements OnMapReadyCallback {
+public class VerUbicacionEnMapa extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private ActivityVerUbicacionesBinding binding;//ActivityVerUbicacionMapaBinding
+    private ActivityVerUbicacionEnMapaBinding binding;
     FirebaseDatabase database;
     DatabaseReference myRef;
 
@@ -43,7 +41,7 @@ public class verUbicacionMapa extends FragmentActivity implements OnMapReadyCall
 
         auth = FirebaseAuth.getInstance();
 
-        binding = ActivityVerUbicacionesBinding.inflate(getLayoutInflater());
+        binding = ActivityVerUbicacionEnMapaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -68,7 +66,7 @@ public class verUbicacionMapa extends FragmentActivity implements OnMapReadyCall
 
         // Add a marker in Sydney and move the camera
 
-      //  mMap.addMarker(new MarkerOptions().position(primera_posicion).title(ubicacionesList.get(0).getNombre()));
+        //  mMap.addMarker(new MarkerOptions().position(primera_posicion).title(ubicacionesList.get(0).getNombre()));
 
     }
 
@@ -89,6 +87,7 @@ public class verUbicacionMapa extends FragmentActivity implements OnMapReadyCall
                     LatLng posicion_actual = new LatLng(Double.parseDouble(ubicacionesList.get(0).getLatitud()), Double.parseDouble(ubicacionesList.get(0).getLongitud()));
                     mMap.addMarker(new MarkerOptions().position(posicion_actual).title(ubicacionesList.get(0).getNombre()));
                     mMap.moveCamera(CameraUpdateFactory.newLatLng(posicion_actual));
+                    mMap.animateCamera(CameraUpdateFactory.zoomTo(12),2000,null);
                     for(int i = 1; i < ubicacionesList.size(); i++){
 
                         posicion_actual = new LatLng(Double.parseDouble(ubicacionesList.get(i).getLatitud()), Double.parseDouble(ubicacionesList.get(i).getLongitud()));

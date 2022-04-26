@@ -9,6 +9,8 @@
     <string name="longitud">Longitud </string>
     <string name="latitud">Latitud </string>
     <string name="guardar">Guardar</string>
+    <string name="eliminar">Eliminar ubicación</string>
     <string name="verEnMapa">Ver ubicaciones en mapa</string>
     <string name="title_activity_ver_ubicacion_mapa">verUbicacionMapa</string>
+    <string name="title_activity_ver_ubicacion_en_mapa">verUbicacionEnMapa</string>
 </resources>

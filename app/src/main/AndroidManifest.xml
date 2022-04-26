@@ -9,9 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AplicacionUsuarios">
-        <activity
-            android:name=".EditarPerfil"
-            android:exported="false" />
+
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -25,23 +23,29 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCw9ZnOE3CnP5W1hNt5leA_m0N4dylX6hE" />
+            android:value="YOUR_API_KEY" />
 
         <activity
-            android:name=".verUbicacionMapa"
+            android:name=".VerUbicacionEnMapa"
             android:exported="false"
-            android:label="@string/title_activity_ver_ubicacion_mapa" />
+            android:label="@string/title_activity_ver_ubicacion_en_mapa" />
+        <activity
+            android:name=".EditarPerfil"
+            android:exported="false" />
         <activity
             android:name=".registrarNuevaUbicacion"
             android:exported="false" />
         <activity
-            android:name=".verUbicaciones"
+            android:name=".VerUbicaciones"
             android:exported="false" />
         <activity
             android:name=".Registrar"
             android:exported="false" />
         <activity
             android:name=".PerfilUsuario"
+            android:exported="false" />
+        <activity
+            android:name=".VerPerfil"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
