@@ -128,7 +128,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                                 if(perfilUsuario.tipoUsuario == false){
                                     //redireccionar al perfil
-                                    startActivity(new Intent(MainActivity.this, PerfilUsuario.class));
+                                    finish();
+                                    Intent intent = new Intent(MainActivity.this, PerfilUsuario.class);
+                                    startActivity(intent);
+
 
                                     Toast.makeText(MainActivity.this, "FELICIDADES ESTAS ADENTRO", Toast.LENGTH_LONG).show();
                                 }

@@ -24,7 +24,7 @@ public class Registrar extends AppCompatActivity implements View.OnClickListener
 
     private ImageView imagen;
     private FirebaseAuth mAuth;
-    private EditText editNombre, editEdad, editCorreo, editGenero, editClave;
+    private EditText editNombre, editEdad, editCorreo, editDireccion, editClave;
     private ProgressBar barraProrgreso;
     private Button botonRegistro;
     @Override
@@ -35,9 +35,8 @@ public class Registrar extends AppCompatActivity implements View.OnClickListener
         mAuth = FirebaseAuth.getInstance();
 
         editNombre = (EditText) findViewById(R.id.Nombre);
-        editEdad = (EditText) findViewById(R.id.edad);
         editCorreo = (EditText) findViewById(R.id.Correo2);
-        editGenero = (EditText) findViewById(R.id.Genero);
+        editDireccion = (EditText) findViewById(R.id.Genero);
         editClave = (EditText) findViewById(R.id.Clave);
         botonRegistro = (Button) findViewById(R.id.Registrar);
         botonRegistro.setOnClickListener(this);
@@ -63,8 +62,8 @@ public class Registrar extends AppCompatActivity implements View.OnClickListener
     private void registrarUsuario() {
         String email = editCorreo.getText().toString().trim();
         String nombre = editNombre.getText().toString().trim();
-        String edad = editEdad.getText().toString().trim();
-        String genero = editGenero.getText().toString().trim();
+        String direccion = editDireccion.getText().toString().trim();
+        String genero = editDireccion.getText().toString().trim();
         String contrasena = editClave.getText().toString().trim();
         Boolean tipoUser= false;
 
@@ -74,15 +73,9 @@ public class Registrar extends AppCompatActivity implements View.OnClickListener
             return;
         }
 
-        if(edad.isEmpty()){
-            editEdad.setError("Se requiere edad");
-            editEdad.requestFocus();
-            return;
-        }
-
-        if(genero.isEmpty()){
-            editGenero.setError("Se requiere nombre completo");
-            editGenero.requestFocus();
+        if(direccion.isEmpty()){
+            editDireccion.setError("Se requiere nombre completo");
+            editDireccion.requestFocus();
             return;
         }
 
@@ -115,7 +108,7 @@ public class Registrar extends AppCompatActivity implements View.OnClickListener
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Usuario user = new Usuario(nombre, edad, email, genero, tipoUser,0);
+                            Usuario user = new Usuario(nombre, email,direccion, tipoUser,0);
 
                             FirebaseDatabase.getInstance().getReference("Usuarios")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
