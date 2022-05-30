@@ -5,6 +5,7 @@ public class Ubicacion {
     private String longitud;
     private String latitud;
     private String nombre;
+    private String tipo;
 
     public Ubicacion(){
 
@@ -13,6 +14,12 @@ public class Ubicacion {
         this.longitud = longitud;
         this.latitud = latitud;
         this.nombre = nombre;
+    }
+    public Ubicacion(String longitud, String latitud, String nombre, String tipo){
+        this.longitud = longitud;
+        this.latitud = latitud;
+        this.nombre = nombre;
+        this.tipo = tipo;
     }
     public String getLongitud() {
         return longitud;
@@ -23,6 +30,9 @@ public class Ubicacion {
     public String getNombre() {
         return nombre;
     }
+    public String getTipo(){return tipo;    }
+
+    public void setTipo(String tipo) {this.tipo = tipo;}
 
     public void setLongitud(String x) {
         this.longitud = x;

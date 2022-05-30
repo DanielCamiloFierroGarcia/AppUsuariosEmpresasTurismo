@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +27,8 @@ public class registrarNuevaUbicacion extends AppCompatActivity implements View.O
     private EditText longitud; //X = longitud
     private EditText latitud; // Y = latitud
     private EditText nombre;
+    private CheckBox turismo;
+    private CheckBox transporte;
     FirebaseDatabase database;
     DatabaseReference myRef;
 
@@ -52,27 +55,35 @@ public class registrarNuevaUbicacion extends AppCompatActivity implements View.O
             TextView text_nombre = findViewById(R.id.textView_nombre);
             TextView text_longitud =  findViewById(R.id.textView_X);
             TextView text_latitud =  findViewById(R.id.textView_Y);
+            TextView text_uso = findViewById(R.id.textView_Uso);
 
             TextView guardado_nombre =  findViewById(R.id.nombre_guardado);
             TextView guardado_longitud =  findViewById(R.id.x_guardado);
             TextView guardado_latitud = findViewById(R.id.y_guardado);
+            TextView guardado_uso = findViewById(R.id.uso_guardado);
+
+            turismo = (CheckBox) findViewById(R.id.checkBoxTurismo);
+            transporte = (CheckBox) findViewById(R.id.checkBoxTransporte);
 
             if(validarCoord(longitud.getText().toString()) && validarCoord(latitud.getText().toString())){
-
-                guardarInfo(longitud.getText().toString(), latitud.getText().toString(), nombre.getText().toString());
+                String uso = definirTipo();
+                guardarInfo(longitud.getText().toString(), latitud.getText().toString(), nombre.getText().toString(), uso);
                 Toast.makeText(registrarNuevaUbicacion.this, "Se ha guardado", Toast.LENGTH_SHORT).show();
 
                 guardado_nombre.setVisibility(View.VISIBLE);
                 guardado_longitud.setVisibility(View.VISIBLE);
                 guardado_latitud.setVisibility(View.VISIBLE);
+                guardado_uso.setVisibility(View.VISIBLE);
 
                 text_nombre.setText(nombre.getText().toString());
                 text_longitud.setText(longitud.getText().toString());
                 text_latitud.setText(latitud.getText().toString());
+                text_uso.setText(uso);
 
                 nombre.setText("");
                 latitud.setText("");
                 longitud.setText("");
+
 
             }else{
                 Toast.makeText(registrarNuevaUbicacion.this, "Error en las coordenadas", Toast.LENGTH_SHORT).show();
@@ -80,10 +91,12 @@ public class registrarNuevaUbicacion extends AppCompatActivity implements View.O
                 guardado_nombre.setVisibility(View.INVISIBLE);
                 guardado_longitud.setVisibility(View.INVISIBLE);
                 guardado_latitud.setVisibility(View.INVISIBLE);
+                guardado_uso.setVisibility(View.INVISIBLE);
 
                 text_nombre.setText("");
                 text_longitud.setText("");
                 text_latitud.setText("");
+
             }
         });
         Button buttonVer = findViewById(R.id.ver_ubicaciones);
@@ -99,9 +112,9 @@ public class registrarNuevaUbicacion extends AppCompatActivity implements View.O
     }
 
 
-    public void guardarInfo(String longitud, String latitud, String nombre){
+    public void guardarInfo(String longitud, String latitud, String nombre, String uso){
 
-        Ubicacion ubicacion =  new Ubicacion(longitud, latitud, nombre);
+        Ubicacion ubicacion =  new Ubicacion(longitud, latitud, nombre, uso);
         if(auth.getCurrentUser() != null){
             myRef.child(auth.getCurrentUser().getUid()).child(ubicacion.getNombre()).setValue(ubicacion).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
@@ -126,5 +139,19 @@ public class registrarNuevaUbicacion extends AppCompatActivity implements View.O
         Pattern p = Pattern.compile("[-]?[0-9]+[.]?[0-9]+");
         Matcher m = p.matcher(coord);
         return m.matches();
+    }
+    public String definirTipo(){
+        turismo = (CheckBox) findViewById(R.id.checkBoxTurismo);
+        transporte = (CheckBox) findViewById(R.id.checkBoxTransporte);
+
+        if (turismo.isChecked() && transporte.isChecked()){
+            return "Ambos";
+
+        }else if(!turismo.isChecked() && transporte.isChecked()){
+            return "Transporte";
+        }
+        else{
+            return "Turismo";
+        }
     }
 }

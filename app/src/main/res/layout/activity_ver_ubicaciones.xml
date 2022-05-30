@@ -27,4 +27,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/verEnMapa" />
+        <Button
+            android:id="@+id/irAMapa_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Open street" />
 </LinearLayout>

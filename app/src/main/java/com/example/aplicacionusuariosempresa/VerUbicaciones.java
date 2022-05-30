@@ -54,6 +54,10 @@ public class VerUbicaciones extends AppCompatActivity implements View.OnClickLis
         buttonIrAMapa.setOnClickListener(view -> {
             startActivity(new Intent(VerUbicaciones.this, VerUbicacionEnMapa.class));
         });
+        Button buttonIrAMapa_openMap = findViewById(R.id.irAMapa_2);
+        buttonIrAMapa_openMap.setOnClickListener(view -> {
+            startActivity(new Intent(VerUbicaciones.this, OpenStreetMap.class));
+        });
     }
 
     @Override
@@ -72,7 +76,9 @@ public class VerUbicaciones extends AppCompatActivity implements View.OnClickLis
                         String nombre = ds.child("nombre").getValue().toString();
                         String longitud = ds.child("longitud").getValue().toString();
                         String latitud = ds.child("latitud").getValue().toString();
-                        ubicacionesList.add(new Ubicacion(longitud, latitud, nombre));
+                        String uso = ds.child("tipo").getValue().toString();
+                        ubicacionesList.add(new Ubicacion(longitud, latitud, nombre, uso));
+
                     }
                     adapter = new AdaptadorUbicacion(ubicacionesList, R.layout.ubicacion_view);
                     mRecycler.setAdapter(adapter);

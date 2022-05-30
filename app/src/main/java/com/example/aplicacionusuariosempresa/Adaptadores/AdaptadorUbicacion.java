@@ -44,6 +44,8 @@ public class AdaptadorUbicacion extends RecyclerView.Adapter<AdaptadorUbicacion.
         holder.textName.setText("   Nombre " + ubicacion.getNombre());
         holder.textLongitud.setText("   Longitud " + ubicacion.getLongitud());
         holder.textLatitud.setText("    Latitud " + ubicacion.getLatitud() + "\n");
+        holder.textUso.setText("    Tipo " + ubicacion.getTipo());
+
 
         holder.btn_eliminar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,7 +67,7 @@ public class AdaptadorUbicacion extends RecyclerView.Adapter<AdaptadorUbicacion.
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView textLongitud, textName, textLatitud, cont;
+        private TextView textLongitud, textName, textLatitud, cont, textUso;
         ImageButton btn_eliminar;
 
         public ViewHolder(@NonNull View itemView) {
@@ -74,6 +76,7 @@ public class AdaptadorUbicacion extends RecyclerView.Adapter<AdaptadorUbicacion.
             this.textLongitud = (TextView) itemView.findViewById(R.id.x_ubicacion);
             this.textLatitud = (TextView) itemView.findViewById(R.id.y_ubicacion);
             this.cont = (TextView) itemView.findViewById(R.id.contador);
+            this.textUso = (TextView) itemView.findViewById(R.id.tipo);
             this.btn_eliminar = (ImageButton) itemView.findViewById(R.id.btn_delete);
         }
 
