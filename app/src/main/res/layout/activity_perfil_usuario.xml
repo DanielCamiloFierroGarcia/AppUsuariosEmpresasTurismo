@@ -11,23 +11,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/irPerfil"
-            android:layout_width="209dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/vista_promociones"
-            android:layout_marginStart="-1dp"
-            android:layout_marginTop="0dp"
-            android:layout_toEndOf="@+id/agregar_promocion"
-            android:text="Ir al perfil" />
-
         <TextView
             android:id="@+id/Bienvenida"
-            android:layout_width="wrap_content"
+            android:layout_width="213dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="-3dp"
             android:text="Bienvenido"
             android:textColor="#FF5722"
             android:textSize="25dp" />
@@ -64,7 +54,7 @@
 
         <Button
             android:id="@+id/agregar_promocion"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/vista_promociones"
             android:layout_marginTop="-1dp"
@@ -99,18 +89,11 @@
         </ScrollView>
 
         <Button
-            android:id="@+id/perfil"
+            android:id="@+id/irPerfil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
             android:text=" Tu empresa" />
-
-
-
-
-
-
 
 
     </RelativeLayout>
